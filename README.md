@@ -13,12 +13,12 @@ A simple, elegant, and interactive habit tracking application built with **React
 <div align="center">
   <table>
     <tr>
-      <td><img src="public/screenshots/habit-add.png" alt="Form of adding habit" width="500"></td>
-      <td><img src="public/screenshots/habit-test.png" alt="Test Page" width="500"></td>
+      <td><img src="public/screenshots/habit-add.png" alt="Form of adding habit" width="540"></td>
+      <td><img src="public/screenshots/habit-test.png" alt="Test Page" width="540"></td>
     </tr>
     <tr>
-      <td><img src="public/screenshots/habit-calendar.png" alt="Calendar" width="500"></td>
-      <td><img src="public/screenshots/habit-progress.png" alt="Habit Progress" width="500"></td>
+      <td><img src="public/screenshots/habit-calendar.png" alt="Calendar" width="540"></td>
+      <td><img src="public/screenshots/habit-progress.png" alt="Habit Progress" width="540"></td>
     </tr>
   </table>
 </div>
