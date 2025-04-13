@@ -1,11 +1,29 @@
 # 🧠 Habit Tracker App V2
 
-
 A simple, elegant, and interactive habit tracking application built with **React**, **Vite**, and **Tailwind CSS**. Version 2 introduces **Dark Mode**, animated transitions, and a cleaner UI/UX for tracking personal habits and routines.
 
+<!-- Main Banner -->
 <p align="center">
-  <img src="/api/placeholder/640/320" alt="Habit Tracker App V2 Demo" />
+  <img src="public/screenshots/habit-hero.png" alt="Habit Tracker V2 Banner" width="600" />
 </p>
+
+<!-- Screenshots Grid -->
+## 📸 App Preview
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="public/screenshots/habit-add.png" alt="Form of adding habit" width="500"></td>
+      <td><img src="public/screenshots/habit-test.png" alt="Test Page" width="500"></td>
+    </tr>
+    <tr>
+      <td><img src="public/screenshots/habit-calendar.png" alt="Calendar" width="500"></td>
+      <td><img src="public/screenshots/habit-progress.png" alt="Habit Progress" width="500"></td>
+    </tr>
+  </table>
+</div>
+
+
 
 ## 🌟 Features
 
