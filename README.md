@@ -29,10 +29,12 @@ A simple, elegant, and interactive habit tracking application built with **React
 - **Today's Habits** section with one-click "Mark as Complete" functionality
 - **Streak Counting** to motivate consistent habit formation
 
-### 🌙 Dark/Light Theme
-- **Seamless Toggle** between light and dark modes with smooth transitions
-- **System Preference Detection** for automatic theme switching
-- **Persistent Theme Selection** saved in user preferences
+
+### 🌙 Dark Mode Only
+
+- **Enjoy a sleek dark theme** with smooth transitions
+- **Automatically** activates based on your system's dark mode preference
+- **Your preference** is saved and persists across sessions
 
 ## 🧩 Tech Stack
 
