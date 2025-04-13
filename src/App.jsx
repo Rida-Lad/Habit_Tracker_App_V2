@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { DarkModeProvider } from "./context/DarkModeContext"; // New context
 
-function App() {
-  const [count, setCount] = useState(0)
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Habits from "./components/Habits";
+import Calendar from "./components/Calendar";
+import Progress from "./components/Progress";
+import Test from "./components/Test";
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        <h1 className="mt-4 text-lg text-gray-900 dark:text-gray-100">
+          Loading...
+        </h1>
+      </div>
+    );
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <DarkModeProvider>
+      <Router>
+        <Navbar />
+        <div className="container mx-auto px-4 dark:bg-gray-900 min-h-screen">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/habits" element={<Habits />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/progress" element={<Progress />} />
+          </Routes>
+        </div>
+      </Router>
+    </DarkModeProvider>
+  );
+};
 
-export default App
+export default App;
