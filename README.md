@@ -11,36 +11,34 @@ A simple, elegant, and interactive habit tracking application built with **React
 ## 📸 App Preview
 
 <div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; max-width: 800px; margin: 0 auto;">
-  <!-- Feature 1 -->
-  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+  <!-- Row 1 -->
+  <figure style="margin: 0; width: 100%; height: 300px; overflow: hidden; border-radius: 8px; border: 1px solid #e1e4e8;">
     <img src="public/screenshots/habit-add.png" 
          alt="Form of adding habit" 
-         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
-    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Adding a Personalized Habit</figcaption>
+         style="width: 100%; height: 100%; object-fit: cover;">
+    <figcaption style="text-align: center; padding: 10px; background: #f6f8fa;"><b>▲</b> Adding a Personalized Habit</figcaption>
   </figure>
 
-  <!-- Feature 2 -->
-  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+  <figure style="margin: 0; width: 100%; height: 300px; overflow: hidden; border-radius: 8px; border: 1px solid #e1e4e8;">
     <img src="public/screenshots/habit-test.png" 
          alt="Test Page" 
-         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
-    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Finding Your Best Habits</figcaption>
+         style="width: 100%; height: 100%; object-fit: cover;">
+    <figcaption style="text-align: center; padding: 10px; background: #f6f8fa;"><b>▲</b> Finding Your Best Habits</figcaption>
   </figure>
 
-  <!-- Feature 3 -->
-  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+  <!-- Row 2 -->
+  <figure style="margin: 0; width: 100%; height: 300px; overflow: hidden; border-radius: 8px; border: 1px solid #e1e4e8;">
     <img src="public/screenshots/habit-calendar.png" 
          alt="Calendar" 
-         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
-    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Calendar of Habits</figcaption>
+         style="width: 100%; height: 100%; object-fit: cover;">
+    <figcaption style="text-align: center; padding: 10px; background: #f6f8fa;"><b>▲</b> Calendar of Habits</figcaption>
   </figure>
 
-  <!-- Feature 4 -->
-  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+  <figure style="margin: 0; width: 100%; height: 300px; overflow: hidden; border-radius: 8px; border: 1px solid #e1e4e8;">
     <img src="public/screenshots/habit-progress.png" 
          alt="Habit Progress" 
-         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
-    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Habit Management</figcaption>
+         style="width: 100%; height: 100%; object-fit: cover;">
+    <figcaption style="text-align: center; padding: 10px; background: #f6f8fa;"><b>▲</b> Habit Management</figcaption>
   </figure>
 </div>
 
