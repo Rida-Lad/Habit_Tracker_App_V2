@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Calendar.css";
 
 const HabitsCalendar = () => {
   const [habits, setHabits] = useState([]);
@@ -56,7 +55,7 @@ const HabitsCalendar = () => {
     const daysInMonth = getDaysInMonth(date.year, date.month);
 
     const days = Array.from({ length: firstDay }, (_, i) => (
-      <div key={`empty-${i}`} className="calendar-day empty"></div>
+      <div key={`empty-${i}`} className="h-24 p-2 border border-gray-700 bg-gray-800"></div>
     ));
 
     for (let day = 1; day <= daysInMonth; day++) {
@@ -74,16 +73,18 @@ const HabitsCalendar = () => {
       days.push(
         <div 
           key={`day-${day}`} 
-          className={`calendar-day ${habitsForDay.length ? "has-habits" : ""} ${isToday(day) ? "today" : ""}`}
+          className={`h-24 p-2 border ${
+            isToday(day) ? "border-orange-500" : "border-gray-700"
+          } bg-gray-800 relative hover:bg-gray-700 transition-colors`}
         >
-          <div className="day-number">{day}</div>
+          <div className="text-gray-300 text-sm">{day}</div>
           {habitsForDay.length > 0 && (
-            <div className="habit-indicators">
+            <div className="flex flex-wrap gap-1 mt-1">
               {habitsForDay.map((habit, index) => (
                 <div 
                   key={`${day}-${habit.habitName}-${index}`} 
-                  className="habit-indicator" 
-                  style={{ backgroundColor: getColorForHabit(habit.habitName) }} 
+                  className="w-4 h-4 rounded-full text-xs flex items-center justify-center font-bold"
+                  style={{ backgroundColor: getColorForHabit(habit.habitName) }}
                   title={habit.habitName}
                 >
                   {habit.habitName.charAt(0).toUpperCase()}
@@ -105,37 +106,60 @@ const HabitsCalendar = () => {
   };
 
   return (
-    <div className="habits-calendar-container">
-      <div className="habits-calendar">
-        <div className="calendar-header">
-          <button onClick={() => changeMonth(-1)} type="button">❮</button>
-          <h2>{getCurrentMonthDisplay()}</h2>
-          <button onClick={() => changeMonth(1)} type="button">❯</button>
-        </div>
-        <div className="calendar-weekdays">
-          {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-            <div key={day} className="calendar-weekday">{day}</div>
-          ))}
-        </div>
-        <div className="calendar-grid">{renderCalendar()}</div>
-      </div>
-      <div className="habits-legend">
-        <h3>Your Habits</h3>
-        {habits.length > 0 ? (
-          habits.map((habit, index) => (
-            <div key={`legend-${habit.habitName}-${index}`} className="habit-legend-item">
-              <div 
-                className="habit-legend-dot" 
-                style={{ backgroundColor: getColorForHabit(habit.habitName) }}
-              ></div>
-              <span className="habit-legend-name">{habit.habitName}</span>
-            </div>
-          ))
-        ) : (
-          <div className="no-habits-message">
-            No habits added yet. Start building better habits by adding your first one!
+    <div className="flex flex-col md:flex-row gap-8 p-8 bg-gray-900 min-h-screen text-gray-100">
+      <div className="md:w-2/3">
+        <div className="bg-gray-800 rounded-lg shadow-xl p-6">
+          <div className="flex justify-between items-center mb-6 px-4 py-2 bg-gray-700 rounded-lg">
+            <button 
+              onClick={() => changeMonth(-1)}
+              className="text-2xl hover:text-orange-500 transition-colors"
+            >
+              ❮
+            </button>
+            <h2 className="text-xl font-semibold">{getCurrentMonthDisplay()}</h2>
+            <button 
+              onClick={() => changeMonth(1)}
+              className="text-2xl hover:text-orange-500 transition-colors"
+            >
+              ❯
+            </button>
           </div>
-        )}
+          
+          <div className="grid grid-cols-7 gap-px bg-gray-700">
+            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+              <div key={day} className="text-center py-2 bg-gray-800 text-gray-400 text-sm">
+                {day}
+              </div>
+            ))}
+          </div>
+          
+          <div className="grid grid-cols-7 gap-px bg-gray-700 mt-px">
+            {renderCalendar()}
+          </div>
+        </div>
+      </div>
+
+      <div className="md:w-1/3">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-xl h-fit">
+          <h3 className="text-xl font-semibold mb-4">Your Habits</h3>
+          {habits.length > 0 ? (
+            <div className="space-y-3">
+              {habits.map((habit, index) => (
+                <div key={`legend-${habit.habitName}-${index}`} className="flex items-center gap-2">
+                  <div 
+                    className="w-4 h-4 rounded-full"
+                    style={{ backgroundColor: getColorForHabit(habit.habitName) }}
+                  ></div>
+                  <span className="text-gray-300">{habit.habitName}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-gray-400 italic">
+              No habits added yet. Start building better habits by adding your first one!
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Habits from "./components/Habits";
-// import Calendar from "./components/Calendar";
+import Calendar from "./components/Calendar";
 // import Progress from "./components/Progress";
 import Test from "./components/Test";
 
@@ -36,8 +36,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/habits" element={<Habits />} />
           <Route path="/test" element={<Test />} />
-          {/*(<Route path="/calendar" element={<Calendar />} />
-          <Route path="/progress" element={<Progress />} /> */}
+          <Route path="/calendar" element={<Calendar />} />
+          {/*<Route path="/progress" element={<Progress />} /> */}
         </Routes>
       </div>
     </Router>
