@@ -125,7 +125,7 @@ const Home = () => {
             Track Your Progress with Our Intuitive Habit Tracking System
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {/* Feature 1 */}
             <motion.div
               className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center"
@@ -133,7 +133,7 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 relative">
+              <div className="aspect-square w-full max-w-xs mx-auto overflow-hidden rounded-lg mb-4 relative">
                 <img
                   src={goalImage3}
                   alt="Set Personalized Goals"
@@ -161,7 +161,7 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 relative">
+              <div className="aspect-square w-full max-w-xs mx-auto overflow-hidden rounded-lg mb-4 relative">
                 <img
                   src={goalImage4}
                   alt="Stay Motivated"
@@ -189,7 +189,7 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 relative">
+              <div className="aspect-square w-full max-w-xs mx-auto overflow-hidden rounded-lg mb-4 relative">
                 <img
                   src={goalImage5}
                   alt="Visualize Your Success"
