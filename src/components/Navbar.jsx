@@ -11,6 +11,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className="text-orange-500 text-3xl font-bold"
+            style={{fontFamily:'Birthstone, sans-serif' , fontSize:'2.5rem'}}
           >
             Habit Tracker
           </NavLink>

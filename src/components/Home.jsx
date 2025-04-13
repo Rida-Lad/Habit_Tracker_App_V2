@@ -216,7 +216,8 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-gray-800 dark:bg-gray-900 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-4xl font-bold text-orange-500 mb-4">
+          <p style={{ fontFamily: 'Birthstone, sans-serif', fontSize: '3.5rem' }}
+            className="text-4xl font-bold text-orange-500 mb-4">
             Habit Tracker
           </p>
           <p className="text-gray-400">
