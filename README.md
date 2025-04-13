@@ -1,11 +1,49 @@
 # 🧠 Habit Tracker App V2
 
-
 A simple, elegant, and interactive habit tracking application built with **React**, **Vite**, and **Tailwind CSS**. Version 2 introduces **Dark Mode**, animated transitions, and a cleaner UI/UX for tracking personal habits and routines.
 
+<!-- Main Banner -->
 <p align="center">
-  <img src="/api/placeholder/640/320" alt="Habit Tracker App V2 Demo" />
+  <img src="public/screenshots/habit-hero.png" alt="Habit Tracker V2 Banner" width="600" />
 </p>
+
+<!-- Screenshots Grid -->
+## 📸 App Preview
+
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; max-width: 800px; margin: 0 auto;">
+  <!-- Feature 1 -->
+  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+    <img src="public/screenshots/habit-add.png" 
+         alt="Form of adding habit" 
+         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
+    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Adding a Personalized Habit</figcaption>
+  </figure>
+
+  <!-- Feature 2 -->
+  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+    <img src="public/screenshots/habit-test.png" 
+         alt="Test Page" 
+         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
+    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Finding Your Best Habits</figcaption>
+  </figure>
+
+  <!-- Feature 3 -->
+  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+    <img src="public/screenshots/habit-calendar.png" 
+         alt="Calendar" 
+         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
+    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Calendar of Habits</figcaption>
+  </figure>
+
+  <!-- Feature 4 -->
+  <figure style="margin: 0; padding: 10px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8;">
+    <img src="public/screenshots/habit-progress.png" 
+         alt="Habit Progress" 
+         style="width: 100%; height: 300px; object-fit: contain; border-radius: 4px;">
+    <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em;"><b>▲</b> Habit Management</figcaption>
+  </figure>
+</div>
+
 
 ## 🌟 Features
 
