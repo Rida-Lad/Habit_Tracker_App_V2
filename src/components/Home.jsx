@@ -46,16 +46,23 @@ const Home = () => {
 
             {/* Image */}
             <motion.div
-              className="w-full md:w-1/2"
+              className="w-full md:w-1/2 relative"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
+              {/* Base image */}
               <img
                 src={goalImage}
                 alt="Achieve Goals"
-                className="w-full h-auto rounded-lg shadow-xl"
+                className="w-full h-auto rounded-lg shadow-xl relative z-10"
               />
+
+              {/* Blue filter overlay */}
+              <div
+                className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply rounded-lg z-20"
+                aria-hidden="true"
+              ></div>
             </motion.div>
           </div>
         </div>
@@ -82,16 +89,23 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="w-full md:w-1/2"
+              className="w-full md:w-1/2 relative"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
+              {/* Base image */}
               <img
                 src={goalImage2}
                 alt="Transform Your Life"
-                className="w-full h-auto rounded-lg shadow-xl"
+                className="w-full h-auto rounded-lg shadow-xl relative z-10"
               />
+
+              {/* Blue filter overlay */}
+              <div
+                className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply rounded-lg z-20"
+                aria-hidden="true"
+              ></div>
             </motion.div>
           </div>
         </div>
