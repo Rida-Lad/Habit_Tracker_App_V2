@@ -10,24 +10,17 @@ A simple, elegant, and interactive habit tracking application built with **React
 <!-- Screenshots Grid -->
 ## 📸 App Preview
 
-<div align="center" >
-
-  <img src="public/screenshots/habit-add.png" 
-       alt="Form of adding habit" 
-       style="width: 400px; height: 250px;">
-  
-  <img src="public/screenshots/habit-test.png" 
-       alt="Test Page" 
-       style="width: 400px; height: 250px;">
-
-  <img src="public/screenshots/habit-calendar.png" 
-       alt="Calendar" 
-       style="width: 400px; height: 250px;">
-  
-  <img src="public/screenshots/habit-progress.png" 
-       alt="Habit Progress" 
-       style="width: 400px; height: 250px;">
-
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="public/screenshots/habit-add.png" alt="Form of adding habit" width="500"></td>
+      <td><img src="public/screenshots/habit-test.png" alt="Test Page" width="500"></td>
+    </tr>
+    <tr>
+      <td><img src="public/screenshots/habit-calendar.png" alt="Calendar" width="500"></td>
+      <td><img src="public/screenshots/habit-progress.png" alt="Habit Progress" width="500"></td>
+    </tr>
+  </table>
 </div>
 
 
