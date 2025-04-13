@@ -68,19 +68,19 @@ const Habits = () => {
     };
 
     return (
-        <div className="container mx-auto py-12 px-4 dark:bg-gray-900 min-h-screen">
+        <div className="max-w-7xl mx-auto py-12 px-4 bg-gray-900 min-h-screen">
             <div className="text-center mb-8">
-                <h1 className="text-4xl font-bold text-orange-500 dark:text-orange-300 mb-4">
+                <h1 className="text-4xl font-bold text-orange-500 mb-4">
                     Welcome to Your Habit Tracker
                 </h1>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-400">
                     Start building your best habits today!
                 </p>
             </div>
             
-            <div className="flex justify-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
                 <button
-                    className="px-6 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800 transition-colors"
+                    className="px-6 py-2 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-gray-800 transition-colors"
                     onClick={() => setShowForm(true)}
                 >
                     Add Personalized Habit
@@ -96,8 +96,8 @@ const Habits = () => {
             {popupMessage && (
                 <div className={`fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 rounded-lg ${
                     messageType === 'danger' 
-                        ? 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-100'
-                        : 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-100'
+                        ? 'bg-red-800 text-red-100'
+                        : 'bg-green-800 text-green-100'
                 }`}>
                     {popupMessage}
                 </div>
@@ -105,14 +105,14 @@ const Habits = () => {
 
             {showForm && (
                 <form 
-                    className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg max-w-2xl mx-auto"
+                    className="bg-gray-800 p-6 rounded-xl shadow-lg max-w-2xl mx-auto"
                     onSubmit={handleFormSubmit}
                 >
                     <div className="mb-6">
-                        <label className="block text-gray-700 dark:text-gray-300 mb-2">Habit Name</label>
+                        <label className="block text-gray-300 mb-2">Habit Name</label>
                         <input
                             type="text"
-                            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            className="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
                             value={habitName}
                             onChange={(e) => setHabitName(e.target.value)}
                             required
@@ -120,9 +120,9 @@ const Habits = () => {
                     </div>
 
                     <div className="mb-6">
-                        <label className="block text-gray-700 dark:text-gray-300 mb-2">Frequency</label>
+                        <label className="block text-gray-300 mb-2">Frequency</label>
                         <select
-                            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            className="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
                             value={frequency}
                             onChange={(e) => setFrequency(e.target.value)}
                             required
@@ -135,15 +135,15 @@ const Habits = () => {
 
                     {frequency === 'weekly' && (
                         <div className="mb-6">
-                            <label className="block text-gray-700 dark:text-gray-300 mb-2">Select Days</label>
-                            <div className="flex flex-wrap gap-4">
+                            <label className="block text-gray-300 mb-2">Select Days</label>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                 {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
                                     <div key={day} className="flex items-center gap-2">
                                         <input
                                             type="checkbox"
                                             id={day}
                                             value={day}
-                                            className="w-5 h-5 accent-orange-500"
+                                            className="w-5 h-5 accent-orange-500 bg-gray-700"
                                             onChange={(e) => {
                                                 setDays((prev) => e.target.checked 
                                                     ? [...prev, day] 
@@ -153,7 +153,7 @@ const Habits = () => {
                                         />
                                         <label 
                                             htmlFor={day}
-                                            className="text-gray-700 dark:text-gray-300"
+                                            className="text-gray-300"
                                         >
                                             {day}
                                         </label>
@@ -164,10 +164,10 @@ const Habits = () => {
                     )}
 
                     <div className="mb-6">
-                        <label className="block text-gray-700 dark:text-gray-300 mb-2">Duration</label>
+                        <label className="block text-gray-300 mb-2">Duration</label>
                         <div className="flex gap-4">
                             <select
-                                className="w-1/2 px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                className="w-1/2 px-4 py-2 bg-gray-700 border border-gray-600 text-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
                                 value={duration.hours}
                                 onChange={(e) => setDuration((prev) => ({ ...prev, hours: e.target.value }))}
                                 required
@@ -177,7 +177,7 @@ const Habits = () => {
                                 ))}
                             </select>
                             <select
-                                className="w-1/2 px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                className="w-1/2 px-4 py-2 bg-gray-700 border border-gray-600 text-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
                                 value={duration.minutes}
                                 onChange={(e) => setDuration((prev) => ({ ...prev, minutes: e.target.value }))}
                                 required
@@ -190,10 +190,10 @@ const Habits = () => {
                     </div>
 
                     <div className="mb-6">
-                        <label className="block text-gray-700 dark:text-gray-300 mb-2">Start Date</label>
+                        <label className="block text-gray-300 mb-2">Start Date</label>
                         <input
                             type="date"
-                            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            className="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
                             value={startDate}
                             min={new Date().toISOString().split('T')[0]}
                             onChange={(e) => setStartDate(e.target.value)}
@@ -202,10 +202,10 @@ const Habits = () => {
                     </div>
 
                     <div className="mb-6">
-                        <label className="block text-gray-700 dark:text-gray-300 mb-2">End Date</label>
+                        <label className="block text-gray-300 mb-2">End Date</label>
                         <input
                             type="date"
-                            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            className="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
                             value={endDate}
                             min={startDate}
                             onChange={(e) => setEndDate(e.target.value)}
