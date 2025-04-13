@@ -80,7 +80,7 @@ const Home = () => {
                 effortlessly.
               </h3>
             </motion.div>
-            
+
             <motion.div
               className="w-full md:w-1/2"
               variants={fadeInUp}
@@ -109,19 +109,21 @@ const Home = () => {
             Track Your Progress with Our Intuitive Habit Tracking System
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Feature 1 */}
             <motion.div
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
-              <img
-                src={goalImage3}
-                alt="Set Personalized Goals"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4">
+                <img
+                  src={goalImage3}
+                  alt="Set Personalized Goals"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 Set Personalized Goals and Achieve Them with Ease
               </h5>
@@ -133,16 +135,18 @@ const Home = () => {
 
             {/* Feature 2 */}
             <motion.div
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
-              <img
-                src={goalImage4}
-                alt="Stay Motivated"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4">
+                <img
+                  src={goalImage4}
+                  alt="Stay Motivated"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 Stay Motivated with Reminders and Progress Tracking Features
               </h5>
@@ -154,16 +158,18 @@ const Home = () => {
 
             {/* Feature 3 */}
             <motion.div
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
-              <img
-                src={goalImage5}
-                alt="Visualize Your Success"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4">
+                <img
+                  src={goalImage5}
+                  alt="Visualize Your Success"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 Visualize Your Success with Engaging Charts and Analytics
               </h5>
