@@ -89,23 +89,25 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="w-full md:w-1/2 relative"
+              className="w-full md:w-1/2"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
-              {/* Base image */}
-              <img
-                src={goalImage2}
-                alt="Transform Your Life"
-                className="w-full h-auto rounded-lg shadow-xl relative z-10"
-              />
+              <div className="relative">
+                {/* Base image */}
+                <img
+                  src={goalImage2}
+                  alt="Transform Your Life"
+                  className="w-full h-auto rounded-lg shadow-xl relative z-10"
+                />
 
-              {/* Blue filter overlay */}
-              <div
-                className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply rounded-lg z-20"
-                aria-hidden="true"
-              ></div>
+                {/* Blue filter overlay */}
+                <div
+                  className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply rounded-lg z-20"
+                  aria-hidden="true"
+                ></div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -131,12 +133,17 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4">
+              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 relative">
                 <img
                   src={goalImage3}
                   alt="Set Personalized Goals"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover relative z-10"
                 />
+                {/* Blue filter overlay */}
+                <div
+                  className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply z-20"
+                  aria-hidden="true"
+                ></div>
               </div>
               <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 Set Personalized Goals and Achieve Them with Ease
@@ -154,12 +161,17 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4">
+              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 relative">
                 <img
                   src={goalImage4}
                   alt="Stay Motivated"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover relative z-10"
                 />
+                {/* Blue filter overlay */}
+                <div
+                  className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply z-20"
+                  aria-hidden="true"
+                ></div>
               </div>
               <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 Stay Motivated with Reminders and Progress Tracking Features
@@ -177,12 +189,17 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4">
+              <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 relative">
                 <img
                   src={goalImage5}
                   alt="Visualize Your Success"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover relative z-10"
                 />
+                {/* Blue filter overlay */}
+                <div
+                  className="absolute inset-0 bg-blue-900 opacity-50 mix-blend-multiply z-20"
+                  aria-hidden="true"
+                ></div>
               </div>
               <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 Visualize Your Success with Engaging Charts and Analytics
