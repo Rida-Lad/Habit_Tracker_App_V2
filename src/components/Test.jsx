@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ProgressBar, Button, Card, Container } from "react-bootstrap";
 import { CheckCircleFill, XCircleFill, ArrowLeftCircleFill } from "react-bootstrap-icons";
 
 const TestHabits = () => {
@@ -75,81 +74,83 @@ const TestHabits = () => {
   };
 
   return (
-    <Container className="mt-5 mb-5">
+    <div className="max-w-4xl mx-auto px-4 py-12 bg-gray-900 min-h-screen">
       {!isTestCompleted ? (
-        <Card className="p-5 text-center shadow" style={{ backgroundColor: "#fff", color: "#ffa500" }}>
-          <h4 className="mb-4">
+        <div className="bg-gray-800 p-8 rounded-2xl shadow-xl text-center">
+          <h4 className="text-orange-500 text-xl mb-6">
             Question {currentQuestionIndex + 1} of {questions.length}
           </h4>
-          <p className="fs-4 mb-4">{questions[currentQuestionIndex].text}</p>
-          <ProgressBar
-            now={(currentQuestionIndex / questions.length) * 100}
-            animated
-            striped
-            className="mb-4"
-            style={{ backgroundColor: "#f0f0f0" }}
-            variant="warning"
-          />
-          <div className="mt-4">
-            <Button
-              style={{ backgroundColor: "#ffa500", border: "none", color: "white" }}
-              onClick={() => handleAnswer("Yes")}
-              className="mx-3 px-4 py-2"
-            >
-              <CheckCircleFill className="me-2" />
-              Yes
-            </Button>
-            <Button
-              style={{ backgroundColor: "white", border: "2px solid #ffa500", color: "#ffa500" }}
-              onClick={() => handleAnswer("No")}
-              className="mx-3 px-4 py-2"
-            >
-              <XCircleFill className="me-2" />
-              No
-            </Button>
+          <p className="text-gray-300 text-2xl mb-8">{questions[currentQuestionIndex].text}</p>
+          
+          <div className="w-full bg-gray-700 rounded-full h-3 mb-8">
+            <div 
+              className="bg-orange-500 h-3 rounded-full transition-all duration-500" 
+              style={{ width: `${(currentQuestionIndex / questions.length) * 100}%` }}
+            ></div>
           </div>
-        </Card>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              onClick={() => handleAnswer("Yes")}
+              className="flex items-center justify-center px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+            >
+              <CheckCircleFill className="mr-2 text-xl" />
+              Yes
+            </button>
+            <button
+              onClick={() => handleAnswer("No")}
+              className="flex items-center justify-center px-8 py-3 border-2 border-orange-500 text-orange-500 rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              <XCircleFill className="mr-2 text-xl" />
+              No
+            </button>
+          </div>
+        </div>
       ) : (
-        <Card className="p-5 shadow" style={{ backgroundColor: "#fff", color: "#ffa500" }}>
-          <h3 className="mb-4 text-center">Your Habit Test Results</h3>
+        <div className="bg-gray-800 p-8 rounded-2xl shadow-xl">
+          <h3 className="text-orange-500 text-3xl text-center mb-8">Your Habit Test Results</h3>
+          
           {calculateResults().map(({ category, yesPercentage, noPercentage }) => (
-            <div key={category} className="mb-5">
-              <h5 className="mb-3">{category}</h5>
-              <div className="d-flex align-items-center mb-2">
-                <CheckCircleFill className="text-success me-2" />
-                <strong className="me-2">Good Habit:</strong> {yesPercentage}%
+            <div key={category} className="mb-8">
+              <h5 className="text-gray-300 text-xl mb-4">{category}</h5>
+              
+              <div className="flex items-center mb-2">
+                <CheckCircleFill className="text-green-400 mr-2 text-lg" />
+                <span className="text-gray-400 mr-2 font-semibold">Good Habit:</span>
+                <span className="text-gray-300">{yesPercentage}%</span>
               </div>
-              <div className="d-flex align-items-center mb-3">
-                <XCircleFill className="text-danger me-2" />
-                <strong className="me-2">Needs Improvement:</strong> {noPercentage}%
+              
+              <div className="flex items-center mb-4">
+                <XCircleFill className="text-red-400 mr-2 text-lg" />
+                <span className="text-gray-400 mr-2 font-semibold">Needs Improvement:</span>
+                <span className="text-gray-300">{noPercentage}%</span>
               </div>
-              <ProgressBar style={{ height: "12px" }}>
-                <ProgressBar
-                  style={{ backgroundColor: "#ffa500" }}
-                  now={yesPercentage}
-                  key={1}
-                />
-                <ProgressBar
-                  style={{ backgroundColor: "#f0f0f0" }}
-                  now={noPercentage}
-                  key={2}
-                />
-              </ProgressBar>
+              
+              <div className="w-full bg-gray-700 rounded-full h-3">
+                <div 
+                  className="bg-orange-500 h-3 rounded-full inline-block" 
+                  style={{ width: `${yesPercentage}%` }}
+                ></div>
+                <div 
+                  className="bg-gray-600 h-3 rounded-full inline-block" 
+                  style={{ width: `${noPercentage}%` }}
+                ></div>
+              </div>
             </div>
           ))}
-          <div className="text-center mt-4">
-            <Button
-              style={{ backgroundColor: "#ffa500", border: "none", color: "white" }}
+
+          <div className="text-center mt-8">
+            <button
               onClick={handleReturnToStart}
-              className="px-4 py-2"
+              className="flex items-center justify-center px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors mx-auto"
             >
-              <ArrowLeftCircleFill className="me-2" />
+              <ArrowLeftCircleFill className="mr-2 text-xl" />
               Take Test Again
-            </Button>
+            </button>
           </div>
-        </Card>
+        </div>
       )}
-    </Container>
+    </div>
   );
 };
 
