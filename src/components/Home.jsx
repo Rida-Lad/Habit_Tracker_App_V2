@@ -213,7 +213,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
+     
       <footer className="bg-gray-800 dark:bg-gray-900 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p style={{ fontFamily: 'Birthstone, sans-serif', fontSize: '3.5rem' }}
@@ -229,4 +229,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home; 
